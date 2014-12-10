@@ -37,7 +37,7 @@ $sinfo_form->p_open('mod_media', 'save_logo');
 			<td class="label"><?php _e('Logo'); ?></td>
 			<td class="entry">
 			<?php 
-			/*$logo_message1 = simplexml_load_file('SitebaoheMaker/SitebaoheMaker.xml');
+			/*$logo_message1 = simplexml_load_file('ZSitesMaker/ZSitesMaker.xml');
 			if($logo_message1->output->custom == 'yes')
 			{
 				echo "<img src='{$logo_message1->output->file_name}'/><br />";

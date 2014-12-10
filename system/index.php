@@ -81,15 +81,6 @@ if($_a=='loginout'){
 
 	create_set(UC_OPEN,ADMIN,ADMINPWD,HELPURL,$defaultdomain,DEFAULTSITEID,DEFAULTQQ,DEFAULTPICURL,APIKEY,SHOWRIGHT,APIUSERID,APIPASSWORD); //创建配置
 	echo "<script>window.location.href='".$comeurl."';</script>";	
-}elseif($_a=='savetpldown'){
-	checkadmin();
-	$apiuserid = trim(ParamHolder::get("apiuserid",""));
-	$apipassword = trim(ParamHolder::get("apipassword",""));
-	if ($apiuserid==""){
-		echo "<script>alert('用户名不能为空');history.go(-1);</script>";
-	}
-	create_set(UC_OPEN,ADMIN,ADMINPWD,HELPURL,DEFAULTDOMAIN,DEFAULTSITEID,DEFAULTQQ,DEFAULTPICURL,APIKEY,SHOWRIGHT,$apiuserid,$apipassword); //创建配置
-	echo "<script>window.location.href='".$comeurl."';</script>";		
 }elseif($_a=='saveuc'){
 	$uc_open = (int)trim(ParamHolder::get("ucopen",""));
 	$ucconfig = trim($_REQUEST["ucconfig"]);
@@ -225,7 +216,6 @@ if($_a=='loginout'){
 
 	if(!$admin_name) die ("<script>alert('请输入管理员名称');history.go(-1);</script>");
 	if(!$sitename) die ("<script>alert('请输入网站名称');history.go(-1);</script>");
-	if(!$sitedomain) die ("<script>alert('请输入主域名');history.go(-1);</script>");
 
 	if (is_Date($begindate)==0){
 			$begindate =date("Y-m-d");	//网站开始的时间
@@ -444,7 +434,7 @@ if($_a=='loginout'){
 	checkadmin();
 	$siteid =(int)trim(ParamHolder::get("siteid",""));
 	$admin=trim(ParamHolder::get("admin",""));
-	$result=addadmin($siteid,$admin,"admin888");
+	$result=addadmin($siteid,$admin,"admin88");
 	if ($result){
 		$msg='操作成功';
 	}else{
@@ -455,10 +445,10 @@ if($_a=='loginout'){
 	checkadmin();
 	$siteid =(int)trim(ParamHolder::get("siteid",""));
 	$id =(int)trim(ParamHolder::get("id",""));
-	$sql="update ".$siteid."_users set passwd='".sha1("admin888")."' where id=".$id;
+	$sql="update ".$siteid."_users set passwd='".sha1("admin88")."' where id=".$id;
 	$result=mysql_query($sql);
 	if ($result){
-		$msg='密码重置为admin888';
+		$msg='密码重置为admin88';
 	}else{
 		$msg='操作失败';
 	}
@@ -508,38 +498,10 @@ if($_a=='loginout'){
 	$ucfile=explode("<?php",$ucfile);
 	$ucconfig=$ucfile[1];
 	include P_TPL."/uc.php";
-}elseif($_a=='server'){
-	checkadmin();
-	$ip=serverip();
-	$server=serverid();
-	$checksn=(int)localcache();
-	$sn = file_get_contents("../config/sn.txt");
-	include P_TPL."/server.php";
 }elseif($_a=='savesn'){
 	checkadmin();
 	$sn =trim(ParamHolder::get("sn",""));
 	file_put_contents("../config/sn.txt",$sn);
-	$msg="操作成功";
-	echo "<script>alert('".$msg."');window.location.href='$comeurl';</script>";	
-}elseif($_a=='version'){
-	checkadmin();
-	$version =trim(ParamHolder::get("version",""));
-	$upgrade=checkupgrade($version);
-	$intro = file_get_contents("../upgrade/".$version."/intro.txt");
-	include P_TPL."/version.php";
-}elseif($_a=='doupgrade'){
-	checkadmin();
-	$version =trim(ParamHolder::get("version",""));
-	$upgrade=checkupgrade($version);
-	if ($upgrade==0){
-		$sqllist = file_get_contents("../upgrade/".$version."/data.sql");	
-		$array=explode(";",$sqllist);
-		for ($i=0;$i<sizeof($array);$i++){
-			$thisvalue=$array[$i];
-			mysql_query($thisvalue);
-		}
-		file_put_contents("../upgrade/".$version."/upgrade.lock","");
-	}
 	$msg="操作成功";
 	echo "<script>alert('".$msg."');window.location.href='$comeurl';</script>";	
 }elseif($_a=='dositestar'){
@@ -557,7 +519,7 @@ if($_a=='loginout'){
 	if ($result){
 		$msg="操作成功";
 		if ($admin==""){$admin="admin";}
-		if ($pwd==""){$pwd="admin888";}
+		if ($pwd==""){$pwd="admin88";}
 		if (is_Date($begindate)==0){
 			$begindate =date("Y-m-d");	//网站开始的时间
 		}
@@ -577,10 +539,9 @@ if($_a=='loginout'){
 		$msg="请删除文件:/data/system.lock";
 	}else{
 	
-		$msg="重设密码为:123456";
-		create_set(UC_OPEN,ADMIN,"123456",HELPURL,DEFAULTDOMAIN,DEFAULTSITEID,DEFAULTQQ,DEFAULTPICURL,APIKEY,SHOWRIGHT,APIUSERID,APIPASSWORD);
+		$msg="重设密码为:admin88";
+		create_set(UC_OPEN,ADMIN,"admin88",HELPURL,DEFAULTDOMAIN,DEFAULTSITEID,DEFAULTQQ,DEFAULTPICURL,APIKEY,SHOWRIGHT,APIUSERID,APIPASSWORD);
 		file_put_contents($lockfile,"");
-	
 	}
 	echo "<script>alert('".$msg."');window.location.href='$comeurl';</script>";	
 }elseif($_a=='delete'){
@@ -607,13 +568,7 @@ if($_a=='loginout'){
 		include P_TPL."/login.php";
 	} 
 }
-function checkupgrade($iversion){
-	if (file_exists("../upgrade/".$iversion.'/upgrade.lock')){
-		return 1;
-	}else{
-		return 0;
-	}
-}
+
 function checkadmin(){
 	if ($_SESSION['admin']!=ADMIN||$_SESSION['admin']==""){
 		echo "<script>window.location.href='index.php';</script>";

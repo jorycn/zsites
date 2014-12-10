@@ -11,7 +11,7 @@ if (!defined('IN_CONTEXT')) die('access violation error!');
         </div>
         
         <div id="center">
-          <h1 style="padding:10px 0;">恭喜您，您已经完成了Sitebaohe网站建设系统的基本设置，您现在就可以浏览和访问您的网站了。</h1>
+          <h1 style="padding:10px 0;">恭喜您，您已经完成了ZSites网站建设系统的基本设置，您现在就可以浏览和访问您的网站了。</h1>
             <div class="xx"></div>
           <h1>为了增加您的企业形象提高同行业内竞争力，我们还提供了：</h1>
           <h2><span id="center_xd1">&nbsp;</span><a href="http://www.JZBAO.cn/license/" target='_blank'>授权服务：</a>去除版权信息的同时也得到网站的认知度、商业使用合法性以及官方的相关技术支持。</h2>
@@ -20,7 +20,7 @@ if (!defined('IN_CONTEXT')) die('access violation error!');
           <h2><span id="center_xd4">&nbsp;</span><a href="http://www.jzbao.net/" target='_blank'>域名注册：</a>提供多种域名注册服务，cnnic四星级域名注册商。</h2>
           <h2><span id="center_xd5">&nbsp;</span><a href="http://www.jzbao.net/" target='_blank'>虚拟主机：</a>提供多款虚拟主机服务，2009年度IDC产业优秀虚拟主机奖。</h2>
           <h2><span id="center_xd6">&nbsp;</span><a href="http://www.jzbao.net/" target='_blank'>企业邮箱：</a>提供以企业域名为后缀的电子邮件系统，提升公司企业形象，彰显实力。</h2>
-          <div id="center_pic"><a href="http://www.jzbao.net"><img src="<?php echo P_TPL_WEB; ?>/images/Cndns_logo.gif" width="98" height="30" alt="site" /></a><a href="http://www.jzbao.net"><img src="<?php echo P_TPL_WEB; ?>/images/Sitebaohe_logo1.gif" width="130" height="30" alt="JZBAO" /></a></div>
+          <div id="center_pic"><a href="http://www.jzbao.net"><img src="<?php echo P_TPL_WEB; ?>/images/Cndns_logo.gif" width="98" height="30" alt="site" /></a><a href="http://www.jzbao.net"><img src="<?php echo P_TPL_WEB; ?>/images/ZSites_logo1.gif" width="130" height="30" alt="JZBAO" /></a></div>
    	  </div>
         
         <div id="footer">

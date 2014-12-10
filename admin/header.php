@@ -132,8 +132,6 @@ echo "target=\"main\" hidefocus=\"true\" href=\"index.php?_m=mod_user&_a=admin_e
 }
 echo "				<li id=\"bottonbg\"><a class=\"annex\" hidefocus=\"true\" \n";
 echo "href=\"../\" target=\"_blank\">网站预览</a></li>\n";
-echo "				<li id=\"bottonbg\"><a class=\"annex\" hidefocus=\"true\" \n";
-echo "href=\"".HELPURL."\" target=\"_blank\">使用帮助</a></li>\n";
 echo "				<li id=\"bottonbg\"><a class=\"tabclicklink\" \n";
 echo "hidefocus=\"true\" href=".Html::uriquery('frontpage', 'dologout')." target=\"_top\">";
 echo _e('Logout');

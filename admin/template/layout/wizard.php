@@ -10,7 +10,7 @@
 <body>
 	<div id="outer">
 		<?php if($tag){ ?><div id="top"><?php } ?>
-            <div id="top1">欢迎使用Sitebaohe网站建设系统使用向导! <!--span><a href="#" onclick="parent.tb_remove()"><img border="0" src="<?php echo P_TPL_WEB; ?>/images/close.gif" width="80" height="22" alt="close" /></a></span--></div>
+            <div id="top1">欢迎使用ZSites网站建设系统使用向导! <!--span><a href="#" onclick="parent.tb_remove()"><img border="0" src="<?php echo P_TPL_WEB; ?>/images/close.gif" width="80" height="22" alt="close" /></a></span--></div>
 	
 	<?php include_once($_content_); ?>
 	

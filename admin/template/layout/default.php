@@ -5,7 +5,7 @@ if (!defined('IN_CONTEXT')) die('access violation error!');
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sitebaohe管理后台</title>
+<title>ZSites管理后台</title>
 <link rel="stylesheet" type="text/css" href="<?php echo P_TPL_WEB; ?>/css/style1.css" />
 <!-- 23/03/2010 Jane Add >> -->
 <?php include_once(P_INC.'/global_js.php'); ?>

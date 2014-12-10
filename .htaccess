@@ -1,18 +1,16 @@
 <IfModule mod_rewrite.c>
-  	Options +FollowSymlinks
-  	RewriteEngine On
-
+	#ZSites rewrite rules
+	RewriteEngine On
 
 	#前台
-	RewriteRule ^/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})\.html$ /index\.php\?_m=$1&_a=$2
-	RewriteRule ^/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4
-	RewriteRule ^/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4&$5=$6
-	RewriteRule ^/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4&$5=$6&$7=$8
+	RewriteRule ^([a-zA-Z_]{1,})-([a-zA-Z_]{1,})\.html$ index\.php\?_m=$1&_a=$2
+	RewriteRule ^([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4
+	RewriteRule ^([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4&$5=$6
+	RewriteRule ^([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$ /index\.php\?_m=$1&_a=$2&$3=$4&$5=$6&$7=$8
+
 	#后台
-	RewriteRule ^/admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$ /admin/index\.php\?_m=$1&_a=$2&$3=$4&$5=$6
-	RewriteRule ^/admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})\.html$ /admin/index\.php\?_m=$1&_a=$2
-	RewriteRule ^/admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /admin/index\.php\?_m=$1&_a=$2&$3=$4
-	RewriteRule ^/admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$  /admin/index\.php\?_m=$1&_a=$2&$3=$4&$5=$6&$7=$8
-
-
+	RewriteRule ^admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$ /admin/index\.php\?_m=$1&_a=$2&$3=$4&$5=$6
+	RewriteRule ^admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})\.html$ /admin/index\.php\?_m=$1&_a=$2
+	RewriteRule ^admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})\.html$ /admin/index\.php\?_m=$1&_a=$2&$3=$4
+	RewriteRule ^admin/([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{1,})-([a-zA-Z_]{1,})-([0-9]{0,})\.html$  /admin/index\.php\?_m=$1&_a=$2&$3=$4&$5=$6&$7=$8
 </IfModule>

@@ -116,7 +116,7 @@ window.onload = function() {
 	var status = "<?php echo QQ_ONLINE;?>";
 	if (status == '1') document.getElementById('online_input').style.display = 'inline-block';
 	
-	// for Sitebaohev1.3 online service
+	// for ZSitesv1.3 online service
 	if ($('#sparam_QQ_ONLINE_TITLE_').val() == '') {
 		$('#sparam_QQ_ONLINE_TITLE_').css('color','#C6C6C6');
 		$('#sparam_QQ_ONLINE_TITLE_').val("<?php _e('You can input online customer service title here');?>");

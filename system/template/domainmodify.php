@@ -1,90 +1,67 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sitebaohe站群管理平台</title>
-<link href="../install/css/style.css" rel="stylesheet" type="text/css" />
-<script src="../script/jquery.min.js"></script>
-</head>
+<?php include_once('header.php') ?>
 
-<body>
-    <div id="in">
-    	<?php include_once('head.php');?>
-        <div id="banner"></div>
-        <div id="center">
-        
-        	<div id="left">
-            	<ul>
-                	<?php include_once('left.php');?>
-                </ul>
-            </div>
-           
-            <div id="right">
-            	<div id="right_bor">
-				<h1>域名修改</h1>
-					
-                    <table cellspacing="0" cellpadding="0">
-						 <form name="myform" action="index.php" method="post">
-						   <tr>
-                            <td width="18%" class="icon">域名</td>
-                            <td width="82%">
-                             <?php echo $domain;?>
-                            </td>
-                          </tr>
-						  <tr>
-                            <td width="18%" class="icon">显示模板</td>
-                            <td width="82%">
-							  <select name="domaintemplate">
-							  <?php
-								$array=getDir("../template");
-								for ($i=0;$i<sizeof($array);$i++){
-									$thisvalue=$array[$i];
-									if ($thisvalue){
-										echo "<option value='".$thisvalue."'".fc_compare($domaintemplate,$thisvalue," selected","").">".$thisvalue."</option>";
-									}
-								}
-							  ?>
-							  </select>
+    <div class="container g-wrap">
+      <h1 class="tit">ZSites站群管理平台</h1>
 
-                            </td>
-                          </tr>
-						  <tr>
-                            <td width="18%" class="icon">主关键词</td>
-                            <td width="82%">
-                              <input type="text" name="mainkey"  value="<?php echo $mainkey;?>" />将自动替换格式2
-
-                            </td>
-                          </tr>
-						  <tr>
-                            <td width="18%" class="icon" valign="top">转换关键词</td>
-                            <td width="82%">
-                              <textarea name="domainkey" cols="30" rows="5" /><?php echo $domainkey;?></textarea><br>格式如下<br>1:被替换关键词|替换后的关键词<br>2:被替换关键词<br>3:一行一个
-                            </td>
-                          </tr>
-						  <tr>
-                            <td width="18%" class="icon">状态</td>
-                            <td width="82%">
-                               <input type="radio" name="status"  value="0"<?php echo fc_compare($status,0," checked","")?>/>暂停<input type="radio" name="status"  value="1"<?php echo fc_compare($status,1," checked","")?>/>运行
-
-                            </td>
-                          </tr>
-						  <tr>
-                            <td width="18%" class="icon"></td>
-                            <td width="82%">
-							  <input type="hidden" name="comeurl" value="<?php echo $comeurl;?>">
-							  <input type="hidden" name="domainid" value="<?php echo $domainid;?>">
-							  <input type="hidden" name="_a" value="savemodifydomain">
-                              <input type="submit" name="submit"  value="保存" />
-                            </td>
-                          </tr>
-						  </form>
-                        </table>
-               	
-            	</div>    
-          </div>    
+      <div class="row">
+        <div class="col-lg-3">
+            <?php include_once('left.php');?>
         </div>
-		
-        <?php include_once('foot.php');?>
+        <div class="col-lg-9">
+            <h2>域名修改</h2>
+
+            <form name="myform" action="index.php" method="post" role="form" class="form-horizontal">
+                <div class="form-group">
+                    <label for="domain" class="col-lg-2 control-label">域名</label>
+                    <div class="col-lg-10">
+                        <input type="text" name="domain" id="domain" class="form-control ipt" value="<?php echo $domain;?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="domaintemplate" class="col-lg-2 control-label">显示模板</label>
+                    <div class="col-lg-10">
+                      <select name="domaintemplate" class="form-control">
+                        <?php
+                        $array=getDir("../template");
+                        for ($i=0;$i<sizeof($array);$i++){
+                          $thisvalue=$array[$i];
+                          if ($thisvalue){
+                            echo "<option value='".$thisvalue."'".fc_compare($domaintemplate,$thisvalue," selected","").">".$thisvalue."</option>";
+                          }
+                        }
+                        ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mainkey" class="col-lg-2 control-label">主关键词</label>
+                    <div class="col-lg-10">
+                      <input type="text" name="mainkey" id="mainkey" class="form-control" value="<?php echo $mainkey;?>" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="domainkey" class="col-lg-2 control-label">转换关键词</label>
+                    <div class="col-lg-10">
+                        <textarea name="domainkey" cols="30" rows="5" class="form-control"/><?php echo $domainkey;?></textarea><br>格式如下<br>1:被替换关键词|替换后的关键词<br>2:被替换关键词<br>3:一行一个
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="domainkey" class="col-lg-2 control-label">状态</label>
+                    <div class="col-lg-10">
+                        <input type="radio" name="status"  value="0"<?php echo fc_compare($status,0," checked","")?>/>暂停
+                        <input type="radio" name="status"  value="1"<?php echo fc_compare($status,1," checked","")?>/>运行
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="comeurl" value="<?php echo $comeurl;?>">
+                    <input type="hidden" name="domainid" value="<?php echo $domainid;?>">
+                    <input type="hidden" name="_a" value="savemodifydomain">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="保存" />
+                </div>
+            </form>
+
+        </div>
     </div>
-</body>
-</html>
+
+<?php include_once('foot.php');?>

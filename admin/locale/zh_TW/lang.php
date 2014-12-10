@@ -685,7 +685,7 @@ return array(
 	"Licenced error"=>"對不起，您還沒有購買授權，<a href='http://www.JZBAO.cn/license'>請點擊此處購買</a>",
 	"View All"=>"查看全部",
 	"import file complete!"=>"文件恢復成功！",
-	"As the JZBAO website uses the module type layout,the page moldules maybe will have certain shifting after cutting the template. Please using mouse to drag the shifting module to the region which you assign, then you will complete the page layout again. "=>"由於Sitebaohe網站採用模塊式佈局，切換模板後頁面模塊可能會有一定移位，請用鼠標將移位的模塊拖曳到您指定的區域，重新完成頁面佈局即可！",
+	"As the JZBAO website uses the module type layout,the page moldules maybe will have certain shifting after cutting the template. Please using mouse to drag the shifting module to the region which you assign, then you will complete the page layout again. "=>"由於ZSites網站採用模塊式佈局，切換模板後頁面模塊可能會有一定移位，請用鼠標將移位的模塊拖曳到您指定的區域，重新完成頁面佈局即可！",
 	"Admin"=>"系統管理員",
 	"Upload file exceed size limit!"=>"上傳文件超過大小限制！",
 	"Member"=>"網站會員",

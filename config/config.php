@@ -1,9 +1,9 @@
 <?php 
 define('UC_OPEN', '0');//UC整合,设置为1表示整合,否则不整合
 define('ADMIN', 'admin');//超级管理员可以修改
-define('ADMINPWD', 'admin888');//管理密码可以修改
+define('ADMINPWD', 'admin88');//管理密码可以修改
 //以下不要随意修改
-define('DEFAULTDOMAIN', '.www.diy.co');//开通网站,需支持泛解,免费赠送域名
+define('DEFAULTDOMAIN', '.zsites.co');//开通网站,需支持泛解,免费赠送域名
 define('DEFAULTSITEID', '1');//没有绑定的域名访问此站点
 define('DEFAULTQQ', '1683309111');//开通网站后默认显示的QQ 
 define('HELPURL', 'http://siteapi.jzbao.net:9090/');//客户网站后台帮助链接

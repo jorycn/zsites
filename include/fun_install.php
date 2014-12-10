@@ -262,7 +262,7 @@ function create_config($host,$user,$pwd,$dnname,$pre,$port){
 	$str .= "public static \$enable_db_debug = false;\n";
 	$str .= "}?>\n";
 	file_put_contents("../config/conn.php",$str);
-	create_set(0,"admin","admin888","","",1,"","","",0,"",""); //创建配置
+	create_set(0,"admin","admin88","","",1,"","","",0,"",""); //创建配置
 }
 function create_set($ucopen,$iadmin,$ipwd,$iapi,$idomain,$isiteid,$iqq,$ipicurl,$ikey,$iright,$iuserid,$ipassword){
 	if ($iapi==""){
@@ -507,7 +507,7 @@ function createsite($dovalue,$siteid,$sitename,$city,$status,$domain,$admin,$pwd
 		$sql="update ".$db_prefix."site_infos set site_name='".$sitename."' where s_locale='zh_CN'";
 		mysql_query($sql);
 	}
-	$sql="INSERT INTO ms_site(siteid,sitename,sitedomain,city,username,status,begindate,enddate,createtime,updatetime) VALUES ('".$siteid."','".$sitename."','".$domain."','".$city."','".$admin."',1,'".$begindate."','".$enddate."',now(),now())";
+	$sql="INSERT INTO ms_site(siteid,sitename,city,username,status,begindate,enddate,createtime,updatetime) VALUES ('".$siteid."','".$sitename."','".$city."','".$admin."',1,'".$begindate."','".$enddate."',now(),now())";
 	$result=mysql_query($sql);
 	return "100|".$siteid."|".$siteid.DEFAULTDOMAIN.""; //安装成功
 	

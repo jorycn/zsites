@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sitebaohe建站宝安装程序</title>
+<title>ZSites建站宝安装程序</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <script src="../script/jquery.min.js"></script>
 <script src="js/install.js"></script>
@@ -10,13 +10,13 @@
 
 <body>
     <div id="in">
-    	<div id="top"><span>Sitebaohe建站宝安装程序</span></div>
+    	<div id="top"><span>ZSites建站宝安装程序</span></div>
         <div id="banner"></div>
         <div id="center">
         
         	<div id="left">
             	<ul>
-                	<li>欢迎您使用Sitebaohe</li>
+                	<li>欢迎您使用ZSites</li>
                     <li>检查系统环境</li>
                     <li class="hov">配置系统</li>
                     <li>完成安装</li>

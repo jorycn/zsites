@@ -24,7 +24,6 @@ define('P_MDL', ROOT.'/model');
 define('P_MOD', ROOT.'/module');
 define('P_MTPL', ROOT.'/m-template');
 
-
 include_once(P_LIB.'/memorycache.php');
 include_once(P_LIB.'/toolkit.php');
 include_once(P_INC.'/json_encode.php');

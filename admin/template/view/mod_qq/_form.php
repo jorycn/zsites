@@ -16,7 +16,7 @@ function changeName() {
 	{
 		$("#QQName").html('WangWang Name');
 	}
-	// for Sitebaohev1.3
+	// for ZSitesv1.3
 	else if($("#qq_category_").val() == 3)
 	{
 		$("#QQName").html('Skype Name');

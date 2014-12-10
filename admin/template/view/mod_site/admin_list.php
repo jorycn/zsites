@@ -46,12 +46,12 @@ $(document).ready(function(){
 
 /*function logoselector1(src)
 {
-	show_iframe_win('SitebaoheMaker/index1.php?_m='+$('#'+src).val());
+	show_iframe_win('ZSitesMaker/index1.php?_m='+$('#'+src).val());
 }
 
 function bannerselect1(src)
 {
-	show_iframe_win('SitebaoheMaker/index1.php?_m='+$('#'+src).val());
+	show_iframe_win('ZSitesMaker/index1.php?_m='+$('#'+src).val());
 }*/
 
 function tb_remove()

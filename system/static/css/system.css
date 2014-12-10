@@ -1,0 +1,15 @@
+.g-wrap{
+	margin:20px 0;
+}
+.g-wrap h1.tit{
+	border-bottom: 2px solid #ccc;
+}
+.g-wrap .search{
+	margin-bottom:10px;
+}
+.sub-tab{
+	margin-bottom: 10px;
+}
+.g-login{
+	width: 500px;margin:0 auto;margin-top: 150px;
+}

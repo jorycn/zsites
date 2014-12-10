@@ -1,45 +1,16 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sitebaohe站群管理平台</title>
-<link href="../install/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../script/jquery.min.js"></script>
-<script>
-jQuery(function($){
-	$("#js-agree").click(function(){
-		if($("#js-agree").attr("checked") == true){
-			$("#js-submit").attr("disabled",false);
-		}else{
-			$("#js-submit").attr("disabled",true);
-		}
-	});
-	$("#js-submit").click(function(){
-		if($("#js-agree").attr("checked") == false){
-			return false;
-		}else{
-			this.href="index.php?_m=frontpage&_a=check";
-		}
-	});
-});
-</script>
-</head>
+<?php include_once('header.php') ?>
 
-<body>
-    <div id="in">
-    	<?php include_once('head.php');?>
-        <div id="banner"></div>
-        <div id="center">
-        
-        	<div id="left">
-            	<?php include_once('left.php');?>
-            </div>
-            
-            <div id="right">
-				<!---->
-				<div id="right_bor">
-				<h1>站群管理</h1>
-				<table cellspacing="0" cellpadding="0">
+    <div class="container g-wrap">
+      <h1 class="tit">ZSites站群管理平台</h1>
+
+      <div class="row">
+        <div class="col-lg-3">
+            <?php include_once('left.php');?>
+        </div>
+        <div class="col-lg-9">
+            <h2>站群管理</h2>
+
+            <table cellspacing="0" cellpadding="0" class="table">
 							
                           <tr>
                             <td width="18%" class="icon">网站ID</td>
@@ -63,20 +34,40 @@ jQuery(function($){
                           </tr>
 						   <tr>
                             <td width="18%" class="icon">增加管理员</td>
-                            <form action=""><td width="82%"><input type="text" name="admin"  value="" />
-							  <input type="hidden" name="siteid" value="<?php echo $siteid;?>">
-							  <input type="hidden" name="_a" value="addadmin">
-                              <input type="submit" name="submit"  value="增加" /></td></form>
+                        	<td width="82%">
+                        		<form action="" class="form-inline">
+                        		<input type="text" name="admin"  value="" class="form-control" />
+						  		<input type="hidden" name="siteid" value="<?php echo $siteid;?>">
+						  		<input type="hidden" name="_a" value="addadmin">
+                          		<input type="submit" name="submit"  class="btn btn-default" value="增加" />
+                          		</form>
+                      		</td>
                           </tr>
-						  </table>
-						<table cellSpacing=1 cellPadding=6 width="100%" bgColor=#dddddd border=0>
-						<tbody>
-						<tr bgColor=#f5f5f5 align=center>
-						<td width="40">编号</td>
-						<td width="*">会员名</td>
-						<td width="60">改密</td>
-						<td width="60">删除</td>
-						</tr>
+			</table>
+
+			<div class="row">
+				<div class="col-lg-12 search">
+					<form method='Get' name='sForm' action=''>
+						<table width='100%' border='0' cellpadding='0' cellspacing='0' class='border'>  
+							<tr class='tdbg'>   
+								<td width='80' align='right'><strong>记录搜索：</strong></td>
+								<td class="form-inline">
+									<?php echo "<select name='field' size='1' class='form-control'>&nbsp;<option value='login'".fc_compare($field,"login"," selected","").">用户名</option></select>&nbsp;<input type='text' name='keyword'  size='20' class='form-control' value='$keyword' maxlength='50' onFocus='this.select();'>&nbsp;<input type='submit' value='搜索' class='btn btn-default'>";?>
+								<td></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+
+			<table cellSpacing=1 cellPadding=6 width="100%" bgColor=#dddddd border=0 class="table table-striped">
+				<tbody>
+					<tr bgColor=#f5f5f5 align=center>
+						<td width="5%">编号</td>
+						<td width="30%">会员名</td>
+						<td width="10%">改密</td>
+						<td width="10%">删除</td>
+					</tr>
 						<?php
 						$field=trim($_REQUEST["field"]);
 						$keyword=trim($_REQUEST["keyword"]);
@@ -118,38 +109,22 @@ jQuery(function($){
 						}
 						?>
 						
-						</tbody>
-						</table>
-						<div class="page">
-						<?php
-						if ($totalnumber>0){
-							echo "共".$totalnumber."条记录,<a href=".$strfilename."&maxperpage=".$maxperpage."&page=1>首页</a>&nbsp;";
-							if ($page<2){
-								echo "上一页";
-							}else{
-								echo "<a href=".$strfilename."&maxperpage=".$maxperpage."&page=".($page-1).">上一页</a>";
-							}
-							echo "&nbsp;";
-							if ($page>=$totalpage){
-								echo "下一页";
-							}else{
-								echo "<a href=".$strfilename."&maxperpage=".$maxperpage."&page=".($page+1).">下一页</a>";
-							}
-							echo "&nbsp;".$page."/".$totalpage."页";
-							echo "<Input type='text' name='maxperpage' size='3' maxlength='4' value='$maxperpage' onKeyPress=\"if (event.keyCode==13) window.location='".$strfilename."&page=".$page."&maxperpage='+this.value;\">条记录/页&nbsp;&nbsp;转到第<Input type='text' name='page' size='3' maxlength='5' value='$page' onKeyPress=\"if (event.keyCode==13) window.location='".$strfilename."&maxperpage=".$maxperpage."&page='+this.value;\">页";
-						}	
-						?>
-						</div>
+					</tbody>
+				</table>
 
-               			<form method='Get' name='sForm' action=''><table width='100%' border='0' cellpadding='0' cellspacing='0' class='border'>  <tr class='tdbg'>   <td width='80' align='right'><strong>记录搜索：</strong></td><td><?php
-						echo "<select name='field' size='1'>><option value='login'".fc_compare($field,"login"," selected","").">用户名</option></select><input type='text' name='keyword'  size='20' value='$keyword' maxlength='50' onFocus='this.select();'><input type='submit' value='搜索'>";						
-						?><td></td></tr></table></form>
-            	</div> 
-				<!---->    
-            </div>
-            
+				<?php if($totalnumber>0):?>
+	    			<div class="row">
+	    				<div class="col-lg-12">
+	    					<ul class="pagination">
+	    						<li <?php if($page<2):?>class="disabled"<?php endif;?>><a href='<?php echo $strfilename."&maxperpage=".$maxperpage."&page=".($page-1) ?>'>&laquo;</a></li>
+	    						<li <?php if($page>=$totalpage):?>class="disabled"<?php endif;?>><a href='<?php echo $strfilename."&maxperpage=".$maxperpage."&page=".($page+1) ?>'>&raquo;</a></li>
+								<li><?php echo "&nbsp;".$page."/".$totalpage."页";?></li>
+								<li class="form-inline"><?php echo "<Input type='text' name='maxperpage' size='3' class='form-control' maxlength='4' value='$maxperpage' onKeyPress=\"if (event.keyCode==13) window.location='".$strfilename."&page=".$page."&maxperpage='+this.value;\">条记录/页&nbsp;&nbsp;转到第<Input type='text' name='page' size='3' class='form-control' maxlength='5' value='$page' onKeyPress=\"if (event.keyCode==13) window.location='".$strfilename."&maxperpage=".$maxperpage."&page='+this.value;\">页";?></li>
+							</ul>
+	    				</div>
+	    			</div>
+    			<?php endif;?>
         </div>
-        <?php include_once('foot.php');?>
     </div>
-</body>
-</html>
+
+<?php include_once('foot.php');?>
