@@ -1,0 +1,1 @@
+<div id="footer" style="text-align:center">Copyright © 2004- 2013 <a href="http://www.jzbao.net">www.jzbao.net</a> All Rights Reserved.</div>
